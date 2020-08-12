@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChatActivity"
+    android:orientation="vertical"
+    android:background="#f4f4f4">
+
+    <include
+        android:id="@+id/chatActionBar"
+        layout="@layout/app_bar_layout" />
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/messageSwipeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/chatRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/sendLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white">
+        <EditText
+            android:id="@+id/mess"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="60dp"
+            android:layout_height="match_parent"
+            android:hint="Enter message here......." />
+        <ImageButton
+            android:id="@+id/send"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/send"
+            android:background="@android:color/white"/>
+        <ImageButton
+            android:id="@+id/add"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/add"
+            android:onClick="add"
+            android:background="@android:color/white"/>
+    </android.support.constraint.ConstraintLayout>
+</LinearLayout>
